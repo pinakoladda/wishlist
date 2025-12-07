@@ -1,0 +1,8 @@
+.header {
+    color: red;
+}
+
+.card {
+    max-width: 500px;
+    margin: 80px auto;
+}
