@@ -15,15 +15,34 @@ import { useSignIn } from './hooks/useSignIn'
 import { ErrorMessage } from '@/components/ErrorMeassage'
 import Link from 'next/link'
 
+import { messages } from './index.intl'
+import { FormattedMessage } from 'react-intl'
+
+const renderHighlight = (chunks: React.ReactNode[]) => (
+    <span className="text-red-500">{chunks}</span>
+)
+
+const renderLink = (chunks: React.ReactNode[]) => (
+    <Link href="/sign-up" className={styles.link}>
+        {chunks}
+    </Link>
+)
+
 export default function SignIn() {
     const { fields, onSubmit, errorMessage } = useSignIn()
+
+    const itemsCount = 0
+
     return (
         <main>
             <Header />
             <Card className={styles.card}>
                 <CardHeader>
                     <CardTitle className="text-center">
-                        Sign-in to your account
+                        <FormattedMessage
+                            {...messages.title}
+                            values={{ hl: renderHighlight }}
+                        />
                     </CardTitle>
                 </CardHeader>
                 <form onSubmit={onSubmit}>
@@ -46,10 +65,17 @@ export default function SignIn() {
                     <ErrorMessage errorMessage={errorMessage} />
 
                     <p className={styles.paragraph}>
-                        Still don`t have an account?
-                        <Link href="/sign-up" className={styles.link}>
-                            Let`s make one!
-                        </Link>
+                        <FormattedMessage
+                            {...messages.dontHaveAccount}
+                            values={{ a: renderLink }}
+                        />
+                    </p>
+
+                    <p>
+                        <FormattedMessage
+                            {...messages.items}
+                            values={{ count: itemsCount }}
+                        />
                     </p>
 
                     <CardFooter className="flex-col gap-2">

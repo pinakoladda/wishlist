@@ -6,6 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
+        "extract": "formatjs extract 'src/**/*.intl.ts*' --flatten --out-file './locales/source.json'",
+        "compile": "formatjs compile",
         "lint": "eslint"
     },
     "dependencies": {
@@ -20,9 +22,11 @@
         "next": "16.1.1",
         "react": "19.2.0",
         "react-dom": "19.2.0",
+        "react-intl": "8.0.9",
         "tailwind-merge": "^3.4.0"
     },
     "devDependencies": {
+        "@formatjs/cli": "6.8.7",
         "@tailwindcss/postcss": "^4",
         "@types/node": "^20",
         "@types/react": "^19",

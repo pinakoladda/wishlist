@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Comic_Relief } from 'next/font/google'
 import './globals.css'
+import { I18nProvider } from '@/components/I18nProvider'
 
 const comicRelief = Comic_Relief({
     weight: ['400', '700'],
@@ -21,7 +22,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${comicRelief.className} antialiased dark`}>
-                {children}
+                <I18nProvider>{children}</I18nProvider>
             </body>
         </html>
     )
