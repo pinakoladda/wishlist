@@ -79,6 +79,20 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   font-family: var(--font-comic-relief);
+  --font-size-big: 18px;
+  --font-size-regular: 16px;
+  --font-size-small: 14px;
+
+
+  --text-color-primary: #fbf2d3;
+  --text-color-secondary: #f9f8f2;
+  --text-color-accent: #f1da64;
+  --text-color-accent-second: #ffee97;
+
+
+  color: var(--text-color-primary);
+
+
 }
 
 .dark {

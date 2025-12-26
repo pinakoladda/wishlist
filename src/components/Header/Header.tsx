@@ -6,8 +6,8 @@ import styles from './index.module.css'
 import { usePathname } from 'next/navigation'
 
 const LINKS = [
-    { url: '/sign-in', text: 'Sign-in' },
     { url: '/', text: 'Main Page' },
+    { url: '/sign-in', text: 'Sign-in' },
 ]
 
 export const Header = () => {

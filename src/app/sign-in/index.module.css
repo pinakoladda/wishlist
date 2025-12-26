@@ -4,5 +4,26 @@
 
 .card {
   max-width: 500px;
-  margin: 80px auto;
+  margin: 60px auto;
+}
+
+.paragraph {
+  padding: 24px;
+  font-size: var(--font-size-small);
+}
+
+.link {
+  font-size: var(--font-size-small);
+  padding-left: 6px;
+  text-decoration: underline 0.8px solid;
+  text-underline-offset: 2px;
+  line-height: 6px;
+  transition: color 0.3s ease-in;
+  transition: text-shadow 0s ease-in;
+
+}
+
+.link:hover {
+  color: var(--text-color-accent);
+  text-shadow: var(--text-color-primary) 1px 0 8px;
 }

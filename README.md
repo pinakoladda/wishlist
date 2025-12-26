@@ -37,6 +37,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ///
 
-1. шрифт
-2. файл стилей для гланой страницы?
-3. собственные компоненты
+1. шрифт не применяется ко всем компонентам из layout
+
+////
+---- measures:
+
+1. margin (80px, 42, 18)
+2.
