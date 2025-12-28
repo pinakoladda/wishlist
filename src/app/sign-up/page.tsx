@@ -35,12 +35,12 @@ export default function SignUp() {
                             {...fields.name}
                         />
 
-                        <Label htmlFor="surname">Surname:</Label>
+                        <Label htmlFor="login">Login:</Label>
                         <Input
-                            id="surname"
+                            id="login"
                             type="text"
-                            placeholder="Surname"
-                            {...fields.surname}
+                            placeholder="login"
+                            {...fields.userName}
                         />
 
                         <Label htmlFor="dateOfBirth">Date of Birth</Label>

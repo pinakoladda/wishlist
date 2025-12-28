@@ -18,9 +18,7 @@ import Link from 'next/link'
 import { messages } from './index.intl'
 import { FormattedMessage } from 'react-intl'
 
-const renderHighlight = (chunks: React.ReactNode[]) => (
-    <span className="text-red-500">{chunks}</span>
-)
+const renderHighlight = (chunks: React.ReactNode[]) => <span>{chunks}</span>
 
 const renderLink = (chunks: React.ReactNode[]) => (
     <Link href="/sign-up" className={styles.link}>
@@ -30,8 +28,6 @@ const renderLink = (chunks: React.ReactNode[]) => (
 
 export default function SignIn() {
     const { fields, onSubmit, errorMessage } = useSignIn()
-
-    const itemsCount = 0
 
     return (
         <main>
@@ -70,14 +66,6 @@ export default function SignIn() {
                             values={{ a: renderLink }}
                         />
                     </p>
-
-                    <p>
-                        <FormattedMessage
-                            {...messages.items}
-                            values={{ count: itemsCount }}
-                        />
-                    </p>
-
                     <CardFooter className="flex-col gap-2">
                         <Button type="submit" className="w-full">
                             Login
