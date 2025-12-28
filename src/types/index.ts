@@ -12,7 +12,7 @@ type ErrorDetails = {
     message: string
 }
 
-export interface ApiError {
+export type ApiError = {
     code: string
     message: string
     details?: string[] | ErrorDetails[]

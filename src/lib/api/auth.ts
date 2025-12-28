@@ -38,3 +38,9 @@ interface SignInResponse {
 export const signIn = (body: SingInBody): Promise<SignInResponse> => {
     return api('POST', '/auth/login', { body })
 }
+
+export const getCurrentUser = (token: string): Promise<User> => {
+    return api('GET', '/users/me', {
+        headers: { authorization: `Bearer ${token}` },
+    })
+}
