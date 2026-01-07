@@ -37,7 +37,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ///
 
-1. шрифт не применяется ко всем компонентам из layout
+1. arrow, border for status
+2. отдельная страница для желания
+3.
 
 ////
 ---- measures:

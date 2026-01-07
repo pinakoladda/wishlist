@@ -1,0 +1,78 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    /* border: 1px solid var(--color-primary);
+    box-shadow: 0 0 8px var(--color-accent-second); */
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.userInfo {
+    text-align: center;
+}
+
+.userName {
+    font-size: var(--font-size-big);
+    color: var(--text-color-accent);
+    text-shadow: var(--text-shadow);
+    margin: 0 0 6px;
+}
+
+.paragraph {
+    font-size: var(--font-size-regular);
+}
+
+.sectionWish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 20px;
+}
+
+.addWishBtn {
+    color: var(--color-accent);
+    font-size: 28px;
+    font-weight: bold;
+    opacity: 1;
+    margin: 20px;
+    text-shadow: var(--text-color-primary) 1px 0 8px;
+    animation-name: glow;
+    animation-play-state: paused;
+}
+
+.addWishBtn:hover {
+    animation-name: glow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+    cursor: pointer;
+}
+
+@keyframes glow {
+    from {
+        text-shadow:
+            0px 0px 5px #f6f66e,
+            0px 0px 5px #e2ddf7;
+    }
+    to {
+        text-shadow:
+            0px 0px 20px #f6f66e,
+            0px 0px 20px #e2ddf7;
+    }
+}
+
+.avatar {
+    border: 2px solid var(--color-accent);
+    box-shadow: var(--text-shadow);
+}
+
+.cardsContainer {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}

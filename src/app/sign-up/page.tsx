@@ -78,7 +78,7 @@ export default function SignUp() {
                     <ErrorMessage errorMessage={errorMessage} />
                     <CardFooter className="flex-col gap-2">
                         <Button type="submit" className="w-full">
-                            Login
+                            Register
                         </Button>
                     </CardFooter>
                 </Card>
