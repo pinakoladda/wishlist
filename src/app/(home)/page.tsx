@@ -1,31 +1,17 @@
-import { Header } from '@/components/HeaderPublic'
+import { HeaderPublic } from '@/components/HeaderPublic'
 import Link from 'next/link'
 import styles from './index.module.css'
-import { Carattere } from 'next/font/google'
 import cn from 'classnames'
 import { Button } from '@/components/ui/button'
-
-const carattere = Carattere({
-    weight: ['400'],
-    subsets: ['latin'],
-    fallback: ['Comic_Relief', 'Arial', 'sans-serif'],
-})
 
 export default function Home() {
     return (
         <main>
-            <Header />
+            <HeaderPublic />
             <section className={styles.mainInfo}>
                 <h1 className={styles.header}>
                     Welcome to{' '}
-                    <span
-                        className={cn(
-                            `${carattere.className}`,
-                            styles.wishWord
-                        )}
-                    >
-                        WishList!
-                    </span>
+                    <span className={styles.wishWord}>WishList!</span>
                 </h1>
                 <h4 className={styles.paragraph}>
                     here you can organize your wishes and share them with

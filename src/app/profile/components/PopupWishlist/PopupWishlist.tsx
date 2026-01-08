@@ -1,0 +1,52 @@
+'use client'
+import { Popup } from '@/components/Popup'
+import styles from './index.module.css'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { DatePicker } from '@/components/DatePicker'
+import { Textarea } from '@/components/ui/textarea'
+import { Button } from '@/components/ui/button'
+
+interface PopupAddWishlistProps {
+    visible: boolean
+    onClose: () => void
+}
+
+export const PopupWishlist = ({ visible, onClose }: PopupAddWishlistProps) => {
+    return (
+        <Popup visible={visible} onClose={onClose}>
+            <div className={styles.main}>
+                <h3 className={styles.header}>Create Wishlist:</h3>
+                <form className={styles.form}>
+                    <div className="grid w-full max-w-sm items-center gap-2">
+                        <Label htmlFor="wishlistName" className={styles.label}>
+                            Wishlist name:
+                        </Label>
+                        <Input className={styles.input} id="wishlistName" />
+                    </div>
+                    <div className="grid w-full max-w-sm items-center gap-2">
+                        <Label htmlFor="dateOfEvent" className={styles.label}>
+                            Date of event:
+                            <span className={styles.labelOptional}>
+                                (optional)
+                            </span>
+                        </Label>
+                        <DatePicker id="dateOfEvent" />
+                    </div>
+                    <div className="grid w-full max-w-sm items-center gap-2">
+                        <Label className={styles.label}>
+                            Description
+                            <span className={styles.labelOptional}>
+                                (optional)
+                            </span>
+                        </Label>
+                        <Textarea placeholder="Description" />
+                    </div>
+                    <Button className={styles.submitBtn}>
+                        Create Wishlist
+                    </Button>
+                </form>
+            </div>
+        </Popup>
+    )
+}

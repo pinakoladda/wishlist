@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Comic_Relief } from 'next/font/google'
+import { Carattere, Comic_Relief } from 'next/font/google'
 import './globals.css'
 import { I18nProvider } from '@/components/I18nProvider'
 
@@ -7,6 +7,12 @@ const comicRelief = Comic_Relief({
     weight: ['400', '700'],
     subsets: ['latin'],
     fallback: ['Arial', 'sans-serif'],
+})
+
+export const carattere = Carattere({
+    weight: ['400'],
+    subsets: ['latin'],
+    fallback: ['Comic_Relief', 'Arial', 'sans-serif'],
 })
 
 export const metadata: Metadata = {

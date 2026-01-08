@@ -8,6 +8,7 @@
     --color-foreground: var(--foreground);
     --font-sans: var(--font-comic-relief);
     --font-mono: var(--font-comic-relief);
+    --font-italic: 'Carattere', 'Arial', 'sans-serif';
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -81,6 +82,7 @@
     --font-size-big: 18px;
     --font-size-regular: 16px;
     --font-size-small: 14px;
+    --font-size-extra-small: 12px;
 
     --text-color-primary: #fbf2d3;
     --text-color-secondary: #f9f8f2;

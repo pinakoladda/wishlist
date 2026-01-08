@@ -11,24 +11,32 @@
 
 .wishWord {
     font-size: 82px;
+    font-family: var(--font-italic);
     color: var(--text-color-accent);
     text-shadow: var(--text-color-primary) 1px 0 8px;
     animation-name: glow;
     animation-play-state: paused;
-    /* transform: animation-name 2s ease-in-out; */
 }
 
 .wishWord:hover {
-    animation-name:glow; 
-    animation-duration:2s;
-    animation-iteration-count:infinite;
-    animation-direction:alternate;
-    animation-play-state:running;
+    animation-name: glow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
 }
 
-@keyframes glow{
-  from{text-shadow:0px 0px 5px #f6f66e,0px 0px 5px #e2ddf7;}
-  to{text-shadow:0px 0px 20px #f6f66e,0px 0px 20px #e2ddf7;}
+@keyframes glow {
+    from {
+        text-shadow:
+            0px 0px 5px #f6f66e,
+            0px 0px 5px #e2ddf7;
+    }
+    to {
+        text-shadow:
+            0px 0px 20px #f6f66e,
+            0px 0px 20px #e2ddf7;
+    }
 }
 
 .paragraph {
@@ -36,7 +44,6 @@
     text-shadow: var(--text-color-primary) 1px 0 8px;
     font-size: var(--font-size-big);
     margin: 0;
-
 }
 
 .signIn {
@@ -52,7 +59,9 @@
     padding: 0 8px;
     text-decoration: underline 0.5px solid;
     text-shadow: unset;
-    transition: text-shadow, color 0.3s ease-out;
+    transition:
+        text-shadow,
+        color 0.3s ease-out;
 }
 
 /* .link:hover {
@@ -67,11 +76,7 @@
   to { text-shadow: 0px 0px 15px var(--text-color-accent), 0px 0px 15px }
 } */
 
-
 .link:hover {
     text-shadow: var(--text-color-primary) 4px 0 14px;
     color: var(--text-color-accent-second);
 }
-
-
-
