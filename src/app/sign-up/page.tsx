@@ -9,7 +9,7 @@ import {
     CardHeader,
     CardTitle,
 } from '@/components/ui/card'
-import { Header } from '@/components/Header'
+import { HeaderPublic } from '@/components/HeaderPublic'
 import styles from './index.module.css'
 import { useSignUp } from './hooks/useSignUp'
 import { ErrorMessage } from '@/components/ErrorMeassage'
@@ -18,7 +18,7 @@ export default function SignUp() {
     const { fields, onSubmit, errorMessage } = useSignUp()
     return (
         <main>
-            <Header />
+            <HeaderPublic />
             <form onSubmit={onSubmit}>
                 <Card className={styles.card}>
                     <CardHeader>

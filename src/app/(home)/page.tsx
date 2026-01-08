@@ -1,4 +1,4 @@
-import { Header } from '@/components/Header'
+import { Header } from '@/components/HeaderPublic'
 import Link from 'next/link'
 import styles from './index.module.css'
 import { Carattere } from 'next/font/google'

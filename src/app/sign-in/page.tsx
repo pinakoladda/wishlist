@@ -9,7 +9,7 @@ import {
     CardHeader,
     CardTitle,
 } from '@/components/ui/card'
-import { Header } from '@/components/Header'
+import { HeaderPublic } from '@/components/HeaderPublic'
 import styles from './index.module.css'
 import { useSignIn } from './hooks/useSignIn'
 import { ErrorMessage } from '@/components/ErrorMeassage'
@@ -31,7 +31,7 @@ export default function SignIn() {
 
     return (
         <main>
-            <Header />
+            <HeaderPublic />
             <Card className={styles.card}>
                 <CardHeader>
                     <CardTitle className="text-center">

@@ -1,15 +1,17 @@
-import { Header } from '@/components/Header'
+import { Header } from '@/components/HeaderPublic'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import styles from './index.module.css'
 import { BadgePlus } from 'lucide-react'
 import { WishCard } from './components/WishCard'
+import { HeaderPrivate } from '@/components/HeaderPrivate'
 
 const WISHES = ['']
 
 export default function Profile() {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
+            <HeaderPrivate />
             <main className={styles.main}>
                 <section className={styles.avatarContainer}>
                     <Avatar className={styles.avatar}>

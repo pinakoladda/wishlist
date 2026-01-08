@@ -7,11 +7,10 @@ import { usePathname } from 'next/navigation'
 
 const LINKS = [
     { url: '/', text: 'Main Page' },
-    { url: '/profile', text: 'Profile' },
     { url: '/sign-in', text: 'Sign-in' },
 ]
 
-export const Header = () => {
+export const HeaderPublic = () => {
     const pathname = usePathname()
 
     return (

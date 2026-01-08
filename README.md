@@ -39,7 +39,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 1. arrow, border for status
 2. отдельная страница для желания
-3.
+3. страница друзей
+4. страница добавления вишлиста
+5. в странице вишлиста добавление желания
+6. страница желания
+7. страница настроек
+8.
 
 ////
 ---- measures:
