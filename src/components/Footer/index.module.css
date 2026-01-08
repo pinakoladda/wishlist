@@ -1,0 +1,32 @@
+.footer {
+    width: 100%;
+    background-color: var(--color-surface);
+    opacity: 0.6;
+    position: fixed;
+    bottom: 0;
+    padding: 16px;
+    transition: opacity 250ms ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer:hover {
+    opacity: 1;
+}
+
+.addWishBtn {
+    width: 24px;
+    height: 24px;
+}
+
+.btnIcon {
+    width: 42px;
+    height: 42px;
+    color: var(--color-accent);
+}
+
+.btnText {
+    color: var(--text-color-accent);
+    font-size: var(--font-size-big);
+}

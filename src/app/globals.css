@@ -92,6 +92,7 @@
     --color-primary: #fbf2d3;
     --color-accent: #f1da64;
     --color-accent-second: #ffee97;
+    --color-surface: #171715;
 
     color: var(--text-color-primary);
 }
