@@ -6,6 +6,7 @@ import { Label } from '@/components/ui/label'
 import { DatePicker } from '@/components/DatePicker'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
+import { CheckBox } from '../CheckBox'
 
 interface PopupAddWishlistProps {
     visible: boolean
@@ -41,6 +42,11 @@ export const PopupWishlist = ({ visible, onClose }: PopupAddWishlistProps) => {
                             </span>
                         </Label>
                         <Textarea placeholder="Description" />
+                    </div>
+                    <div className="grid w-full max-w-sm items-center gap-2">
+                        <p className={styles.label}>Accessibility:</p>
+                        <CheckBox id="private" labelText="Private" />
+                        <CheckBox id="public" labelText="Public" />
                     </div>
                     <Button className={styles.submitBtn}>
                         Create Wishlist

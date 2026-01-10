@@ -1,0 +1,9 @@
+.checkboxContainer {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.label {
+    font-size: var(--text-sm);
+}

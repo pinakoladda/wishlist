@@ -6,7 +6,7 @@ import { WishCard } from './components/WishCard'
 import { HeaderPrivate } from '@/components/HeaderPrivate'
 import { Footer } from '@/components/Footer'
 import { usePopupProps } from '../../hooks/usePopupProps'
-import { PopupWishlist } from './components/PopupWishlist'
+import { PopupWishlist } from '../../components/PopupWishlist'
 
 const WISHES = ['']
 
