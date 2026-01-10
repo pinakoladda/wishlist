@@ -7,7 +7,7 @@
     font-family: var(--font-italic);
     color: var(--text-color-accent);
     padding: 0;
-    margin: 6px 0 28px;
+    margin: 6px 0 18px;
     text-align: center;
 }
 
@@ -30,5 +30,5 @@
 }
 
 .submitBtn {
-    margin-top: 12px;
+    margin-top: 6px;
 }

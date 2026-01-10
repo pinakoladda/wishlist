@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie'
+
 const API_HOST = 'https://api.wishlist.shtepcell.com'
 
 interface ApiOptions {
@@ -21,6 +23,15 @@ export const api = async (method: string, url: string, opts?: ApiOptions) => {
         fetchParams.headers = {
             ...(fetchParams.headers || {}),
             ...opts.headers,
+        }
+    }
+
+    const token = Cookies.get('token')
+
+    if (token) {
+        fetchParams.headers = {
+            ...(fetchParams.headers || {}),
+            authorization: `Bearer ${token}`,
         }
     }
 

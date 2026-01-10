@@ -7,6 +7,7 @@ import { DatePicker } from '@/components/DatePicker'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { CheckBox } from '../CheckBox'
+import { useAddWishlist } from './hooks/useAddWishlist'
 
 interface PopupAddWishlistProps {
     visible: boolean
@@ -14,16 +15,21 @@ interface PopupAddWishlistProps {
 }
 
 export const PopupWishlist = ({ visible, onClose }: PopupAddWishlistProps) => {
+    const { fields, onSubmit } = useAddWishlist()
     return (
         <Popup visible={visible} onClose={onClose}>
             <div className={styles.main}>
                 <h3 className={styles.header}>Create Wishlist:</h3>
-                <form className={styles.form}>
+                <form className={styles.form} onSubmit={onSubmit}>
                     <div className="grid w-full max-w-sm items-center gap-2">
                         <Label htmlFor="wishlistName" className={styles.label}>
                             Wishlist name:
                         </Label>
-                        <Input className={styles.input} id="wishlistName" />
+                        <Input
+                            className={styles.input}
+                            id="wishlistName"
+                            {...fields.name}
+                        />
                     </div>
                     <div className="grid w-full max-w-sm items-center gap-2">
                         <Label htmlFor="dateOfEvent" className={styles.label}>
@@ -41,14 +47,25 @@ export const PopupWishlist = ({ visible, onClose }: PopupAddWishlistProps) => {
                                 (optional)
                             </span>
                         </Label>
-                        <Textarea placeholder="Description" />
+                        <Textarea
+                            placeholder="Description"
+                            {...fields.description}
+                        />
                     </div>
                     <div className="grid w-full max-w-sm items-center gap-2">
-                        <p className={styles.label}>Accessibility:</p>
-                        <CheckBox id="private" labelText="Private" />
-                        <CheckBox id="public" labelText="Public" />
+                        <Label className={styles.label}>
+                            Accessibility:
+                            <span className={styles.labelOptional}>
+                                (public default)
+                            </span>
+                        </Label>
+                        <CheckBox
+                            id="private"
+                            labelText="Private"
+                            {...fields.visibility}
+                        />
                     </div>
-                    <Button className={styles.submitBtn}>
+                    <Button className={styles.submitBtn} type="submit">
                         Create Wishlist
                     </Button>
                 </form>
