@@ -12,7 +12,7 @@ import {
 import { HeaderPublic } from '@/components/HeaderPublic'
 import styles from './index.module.css'
 import { useSignIn } from './hooks/useSignIn'
-import { ErrorMessage } from '@/components/ErrorMeassage'
+import { ErrorMessage } from '@/components/ErrorMessage'
 import Link from 'next/link'
 
 import { messages } from './index.intl'

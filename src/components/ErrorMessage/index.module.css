@@ -1,5 +1,6 @@
 .errorMessage {
     font-size: var(--font-size-small);
     color: var(--text-color-accent);
-    padding: 12px 24px 0;
+    margin: 0;
+    padding: 0;
 }

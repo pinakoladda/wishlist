@@ -3,11 +3,11 @@ import { Popup } from '@/components/Popup'
 import styles from './index.module.css'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { DatePicker } from '@/components/DatePicker'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { CheckBox } from '../CheckBox'
 import { useAddWishlist } from './hooks/useAddWishlist'
+import { ErrorMessage } from '../ErrorMessage'
 
 interface PopupAddWishlistProps {
     visible: boolean
@@ -15,7 +15,7 @@ interface PopupAddWishlistProps {
 }
 
 export const PopupWishlist = ({ visible, onClose }: PopupAddWishlistProps) => {
-    const { fields, onSubmit } = useAddWishlist()
+    const { fields, onSubmit, errorMessage } = useAddWishlist({ onClose })
     return (
         <Popup visible={visible} onClose={onClose}>
             <div className={styles.main}>
@@ -31,7 +31,7 @@ export const PopupWishlist = ({ visible, onClose }: PopupAddWishlistProps) => {
                             {...fields.name}
                         />
                     </div>
-                    <div className="grid w-full max-w-sm items-center gap-2">
+                    {/* <div className="grid w-full max-w-sm items-center gap-2">
                         <Label htmlFor="dateOfEvent" className={styles.label}>
                             Date of event:
                             <span className={styles.labelOptional}>
@@ -39,7 +39,7 @@ export const PopupWishlist = ({ visible, onClose }: PopupAddWishlistProps) => {
                             </span>
                         </Label>
                         <DatePicker id="dateOfEvent" />
-                    </div>
+                    </div> */}
                     <div className="grid w-full max-w-sm items-center gap-2">
                         <Label className={styles.label}>
                             Description
@@ -65,6 +65,7 @@ export const PopupWishlist = ({ visible, onClose }: PopupAddWishlistProps) => {
                             {...fields.visibility}
                         />
                     </div>
+                    <ErrorMessage errorMessage={errorMessage} />
                     <Button className={styles.submitBtn} type="submit">
                         Create Wishlist
                     </Button>

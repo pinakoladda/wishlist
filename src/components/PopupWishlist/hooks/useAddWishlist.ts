@@ -6,7 +6,11 @@ import React, { ChangeEvent, FormEvent } from 'react'
 
 type UpdateFn = (value: string) => void
 
-export const useAddWishlist = () => {
+interface useAddWishlistProps {
+    onClose: () => void
+}
+
+export const useAddWishlist = ({ onClose }: useAddWishlistProps) => {
     const [name, setName] = React.useState('')
     const [description, setDescription] = React.useState('')
     const [visibility, setVisibility] = React.useState(false)
@@ -16,6 +20,7 @@ export const useAddWishlist = () => {
         (updateFn: UpdateFn) =>
         (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
             updateFn(event.target.value)
+            setErrorMessage('')
         }
 
     const onSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -25,8 +30,11 @@ export const useAddWishlist = () => {
             description: description,
             visibility: visibility ? 'public' : 'private',
         })
-            .then((response) => {
-                console.log(response)
+            .then(() => {
+                onClose()
+                setName('')
+                setDescription('')
+                setErrorMessage('')
             })
             .catch((error: ApiError) => {
                 setErrorMessage(error.message)
@@ -48,6 +56,6 @@ export const useAddWishlist = () => {
             visibility: { checked: visibility, onChange: onChangeVisibility },
         },
         onSubmit,
-        // errorMessage,
+        errorMessage,
     }
 }

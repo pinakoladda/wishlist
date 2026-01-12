@@ -12,7 +12,7 @@ import {
 import { HeaderPublic } from '@/components/HeaderPublic'
 import styles from './index.module.css'
 import { useSignUp } from './hooks/useSignUp'
-import { ErrorMessage } from '@/components/ErrorMeassage'
+import { ErrorMessage } from '@/components/ErrorMessage'
 
 export default function SignUp() {
     const { fields, onSubmit, errorMessage } = useSignUp()
