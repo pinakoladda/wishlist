@@ -2,16 +2,27 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import styles from './index.module.css'
 import { BadgePlus } from 'lucide-react'
-import { WishCard } from './components/WishCard'
 import { HeaderPrivate } from '@/components/HeaderPrivate'
 import { Footer } from '@/components/Footer'
 import { usePopupProps } from '../../hooks/usePopupProps'
 import { PopupWishlist } from '../../components/PopupWishlist'
+import { getAllWishlists, Wishlist } from '@/lib/api/wishlist'
+import React from 'react'
+import { getCurrentUser } from '@/lib/api/auth'
+import { WishlistCard } from './components/WishlistCard'
 
 const WISHES = ['']
 
 export default function Profile() {
     const addWishPopupProps = usePopupProps()
+    const [wishlists, setWishlists] = React.useState<Wishlist[]>([])
+
+    React.useEffect(() => {
+        getCurrentUser()
+            .then((user) => getAllWishlists(user.id))
+            .then((data) => setWishlists(data))
+    }, [])
+    console.log(wishlists)
     return (
         <>
             <HeaderPrivate />
@@ -46,12 +57,14 @@ export default function Profile() {
                         ✨ Make a wish! ✨
                     </button>
                     <section className={styles.cardsContainer}>
-                        <WishCard />
-                        <WishCard />
-                        <WishCard />
-                        <WishCard />
-                        <WishCard />
-                        <WishCard />
+                        {wishlists.map((wishlist) => {
+                            return (
+                                <WishlistCard
+                                    key={wishlist.id}
+                                    wishlist={wishlist}
+                                />
+                            )
+                        })}
                     </section>
                 </section>
                 <PopupWishlist

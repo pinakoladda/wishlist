@@ -1,0 +1,32 @@
+.card {
+    border: 1px solid var(--color-primary);
+    border-radius: 12px;
+    padding: 12px;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header {
+    font-size: var(--font-size-big);
+    color: var(--text-color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.paragraph {
+    font-size: var(--font-size-small);
+}
+
+.cardAvatar {
+    width: 100px;
+    height: 100px;
+}
+
+.btn {
+    width: 100%;
+}

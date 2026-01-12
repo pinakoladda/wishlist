@@ -7,7 +7,7 @@ export const WishCard = () => {
         <main className={styles.card}>
             <div className={styles.container}>
                 <img alt="" src="/avatar.jpg" className={styles.cardAvatar} />
-                <h2 className={styles.header}>Wish name</h2>
+                <h2 className={styles.header}>Name</h2>
                 <p className={styles.paragraph}>Cost: 100$</p>
                 <a href="" className={styles.paragraph}></a>
             </div>
