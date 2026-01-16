@@ -1,13 +1,39 @@
+.main {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .name {
     text-align: center;
     font-size: 32px;
     color: var(--text-color-accent);
-    text-decoration: underline 2px solid;
+    text-shadow: var(--text-color-primary) 1px 0 8px;
+    text-decoration: underline wavy var(--color-accent) 1.5px;
     text-underline-offset: 2px;
+}
+
+.description {
+    text-align: center;
+    font-size: var(--font-size-regular);
+    margin: 12px 0;
+    font-family: var(--font-italic);
 }
 
 .paragraph {
     text-align: center;
+    font-size: var(--font-size-big);
+    margin: 24px 0;
+}
+
+.addWishBtn {
+    margin: 80px 0;
     font-size: var(--font-size-regular);
-    margin: 18px 0;
+    padding: 12px;
+    height: 62px;
+    box-sizing: border-box;
+    border-radius: 16px;
+    border: 1px solid var(--color-accent);
+    text-shadow: var(--text-color-primary) 1px 0 8px;
 }

@@ -6,7 +6,7 @@ import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { useAddWish } from '../../hooks/useAddWish'
 import { ErrorMessage } from '@/components/ErrorMessage'
-import { SelectDemo } from '@/components/Select'
+import { Select } from '@/components/Select'
 import cn from 'classnames'
 
 interface PopupAddWishprops {
@@ -17,13 +17,24 @@ interface PopupAddWishprops {
 const CURRENCY = ['USD', 'EUR', 'Zl']
 
 export const PopupAddWish = ({ visible, onClose }: PopupAddWishprops) => {
-    const { fields, errorMessage, onSubmit } = useAddWish()
+    const { fields, errorMessage, onSubmit } = useAddWish({ onClose })
 
     return (
         <Popup visible={visible} onClose={onClose}>
             <div className={styles.main}>
-                <h3 className={styles.header}>Let`s make a wish:</h3>
+                <h3 className={styles.header}>Let`s make a Wish:</h3>
                 <form className={styles.form} onSubmit={onSubmit}>
+                    <div className="grid w-full max-w-sm items-center gap-2">
+                        <Label htmlFor="wishLink" className={styles.label}>
+                            Add link:
+                        </Label>
+                        <Input
+                            className={styles.input}
+                            {...fields.link}
+                            id="wishLink"
+                            required
+                        />
+                    </div>
                     <div className="grid w-full max-w-sm items-center gap-2">
                         <Label htmlFor="wishName" className={styles.label}>
                             Name:
@@ -32,6 +43,7 @@ export const PopupAddWish = ({ visible, onClose }: PopupAddWishprops) => {
                             className={styles.input}
                             id="wishName"
                             {...fields.name}
+                            required
                         />
                     </div>
                     <div className="grid w-full max-w-sm items-center gap-2">
@@ -64,18 +76,13 @@ export const PopupAddWish = ({ visible, onClose }: PopupAddWishprops) => {
                             >
                                 Currency:
                             </Label>
-                            <SelectDemo
+                            <Select
                                 id="currency"
                                 items={CURRENCY}
                                 name="Currency"
+                                {...fields.currency}
                             />
                         </div>
-                    </div>
-                    <div className="grid w-full max-w-sm items-center gap-2">
-                        <Label htmlFor="wishLink" className={styles.label}>
-                            Add link:
-                        </Label>
-                        <Input className={styles.input} id="wishLink" />
                     </div>
                     <ErrorMessage errorMessage={errorMessage} />
                     <Button className={styles.submitBtn} type="submit">

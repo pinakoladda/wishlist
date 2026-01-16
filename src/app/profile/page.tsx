@@ -33,7 +33,7 @@ export default function Profile() {
                     <p className={styles.paragraph}>date of birth</p>
                 </section>
                 <section className={styles.sectionWish}>
-                    {wishlists.length <= 0 ? (
+                    {/* {wishlists.length <= 0 ? (
                         <>
                             <p>Still have no wishes?? Let`s make some here!</p>
                             <button className={styles.addWishBtn}>
@@ -48,7 +48,7 @@ export default function Profile() {
                         <button className={styles.addWishBtn}>
                             ✨ Make a wish! ✨
                         </button>
-                    )}
+                    )} */}
                     <section className={styles.cardsContainer}>
                         {wishlists.map((wishlist) => {
                             return (

@@ -1,16 +1,15 @@
 import { api } from './index'
 
-interface AddWishBody {
+export interface AddWishBody {
     name: string
     description: string
-    price: string
+    price: number
     currency: 'USD' | 'EUR' | 'Zl'
-    priority: 'high' | 'low'
     status: 'available' | 'unavailable'
     url: string
-    imageUrl: string
+    imageUrl?: string
 }
 
 export const addWish = (body: AddWishBody) => {
-    return api('POST', '/wishlists', { body })
+    return api('POST', '/wishes', { body })
 }

@@ -19,6 +19,7 @@
 
 .input {
     width: 100%;
+    font-size: var(--font-size-regular);
 }
 
 .label {
@@ -30,7 +31,9 @@
 }
 
 .submitBtn {
-    margin-top: 6px;
+    margin-top: 12px;
+    font-size: var(--font-size-big);
+    font-family: var(--font-italic);
 }
 
 .priceContainer {

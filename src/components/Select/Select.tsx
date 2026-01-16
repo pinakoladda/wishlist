@@ -1,5 +1,5 @@
 import {
-    Select,
+    Select as SelectBase,
     SelectContent,
     SelectGroup,
     SelectItem,
@@ -7,19 +7,28 @@ import {
     SelectTrigger,
     SelectValue,
 } from '@/components/ui/select'
-import styles from './index.module.css'
 
 interface SelectProps {
+    className?: string
     items: string[]
     name: string
     id: string
+    value?: string
+    onSelect?: (v: string) => void
 }
 
-export function SelectDemo({ items, name, id }: SelectProps) {
+export function Select({
+    items,
+    name,
+    id,
+    className,
+    value,
+    onSelect,
+}: SelectProps) {
     return (
-        <div id={id} className={styles.main}>
-            <Select>
-                <SelectTrigger className="max-w-[120px] w-full">
+        <div id={id} className={className}>
+            <SelectBase value={value} onValueChange={onSelect}>
+                <SelectTrigger className="w-full">
                     <SelectValue placeholder={name} />
                 </SelectTrigger>
                 <SelectContent>
@@ -34,7 +43,7 @@ export function SelectDemo({ items, name, id }: SelectProps) {
                         })}
                     </SelectGroup>
                 </SelectContent>
-            </Select>
+            </SelectBase>
         </div>
     )
 }
