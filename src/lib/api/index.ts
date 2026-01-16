@@ -2,15 +2,13 @@ import Cookies from 'js-cookie'
 
 const API_HOST = 'https://api.wishlist.shtepcell.com'
 
-interface ApiOptions {
+export interface ApiOptions {
     body?: unknown
     headers?: Record<string, string>
 }
 
 export const api = async (method: string, url: string, opts?: ApiOptions) => {
-    const fetchParams: RequestInit = {
-        method,
-    }
+    const fetchParams: RequestInit = { method }
 
     if (opts?.body) {
         fetchParams.body = JSON.stringify(opts.body)

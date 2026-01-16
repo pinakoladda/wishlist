@@ -1,12 +1,18 @@
 import type { Metadata } from 'next'
-import { Carattere, Comic_Relief } from 'next/font/google'
+import { Carattere, Comic_Relief, Emilys_Candy } from 'next/font/google'
 import './globals.css'
 import { I18nProvider } from '@/components/I18nProvider'
 
-const comicRelief = Comic_Relief({
-    weight: ['400', '700'],
+// const comicRelief = Comic_Relief({
+//     weight: ['400', '700'],
+//     subsets: ['latin'],
+//     fallback: ['Arial', 'sans-serif'],
+// })
+
+const emilysCandy = Emilys_Candy({
+    weight: ['400'],
     subsets: ['latin'],
-    fallback: ['Arial', 'sans-serif'],
+    fallback: ['sans-serif'],
 })
 
 export const carattere = Carattere({
@@ -27,7 +33,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${comicRelief.className} antialiased dark`}>
+            <body className={`${emilysCandy.className} antialiased dark`}>
                 <I18nProvider>{children}</I18nProvider>
             </body>
         </html>

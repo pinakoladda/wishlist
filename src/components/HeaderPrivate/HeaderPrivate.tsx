@@ -25,10 +25,16 @@ export const HeaderPrivate = () => {
         <header className={styles.header}>
             {LINKS.map(({ url, text }) => (
                 <Button variant="link" key={url} disabled={pathname === url}>
-                    <Link href={url}>{text}</Link>
+                    <Link className={styles.headerLink} href={url}>
+                        {text}
+                    </Link>
                 </Button>
             ))}
-            <Button variant="link" onClick={logout}>
+            <Button
+                variant="link"
+                className={styles.headerLink}
+                onClick={logout}
+            >
                 Log out
             </Button>
         </header>

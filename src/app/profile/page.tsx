@@ -4,17 +4,12 @@ import styles from './index.module.css'
 import { BadgePlus } from 'lucide-react'
 import { HeaderPrivate } from '@/components/HeaderPrivate'
 import { Footer } from '@/components/Footer'
-import { usePopupProps } from '../../hooks/usePopupProps'
-import { PopupWishlist } from '../../components/PopupWishlist'
 import { getAllWishlists, Wishlist } from '@/lib/api/wishlist'
 import React from 'react'
 import { getCurrentUser } from '@/lib/api/auth'
 import { WishlistCard } from './components/WishlistCard'
 
-const WISHES = ['']
-
 export default function Profile() {
-    const addWishPopupProps = usePopupProps()
     const [wishlists, setWishlists] = React.useState<Wishlist[]>([])
 
     React.useEffect(() => {
@@ -22,7 +17,6 @@ export default function Profile() {
             .then((user) => getAllWishlists(user.id))
             .then((data) => setWishlists(data))
     }, [])
-    console.log(wishlists)
     return (
         <>
             <HeaderPrivate />
@@ -39,7 +33,7 @@ export default function Profile() {
                     <p className={styles.paragraph}>date of birth</p>
                 </section>
                 <section className={styles.sectionWish}>
-                    {WISHES.length <= 0 ? (
+                    {wishlists.length <= 0 ? (
                         <>
                             <p>Still have no wishes?? Let`s make some here!</p>
                             <button className={styles.addWishBtn}>
@@ -51,11 +45,10 @@ export default function Profile() {
                             </button>
                         </>
                     ) : (
-                        ''
+                        <button className={styles.addWishBtn}>
+                            ✨ Make a wish! ✨
+                        </button>
                     )}
-                    <button className={styles.addWishBtn}>
-                        ✨ Make a wish! ✨
-                    </button>
                     <section className={styles.cardsContainer}>
                         {wishlists.map((wishlist) => {
                             return (
@@ -67,11 +60,7 @@ export default function Profile() {
                         })}
                     </section>
                 </section>
-                <PopupWishlist
-                    visible={addWishPopupProps.visible}
-                    onClose={addWishPopupProps.onClose}
-                />
-                <Footer popupOpen={addWishPopupProps.onOpen} />
+                <Footer />
             </main>
         </>
     )

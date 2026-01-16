@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import styles from './index.module.css'
 
 import { Wishlist } from '@/lib/api/wishlist'
+import Link from 'next/link'
 
 interface WishCardProps {
     wishlist: Wishlist
@@ -16,7 +17,7 @@ export const WishlistCard = ({ wishlist }: WishCardProps) => {
                 <a href="" className={styles.paragraph}></a>
             </div>
             <Button className={styles.btn} variant="outline">
-                More info...
+                <Link href={`/wishlist/${wishlist.id}`}>More info...</Link>
             </Button>
         </main>
     )

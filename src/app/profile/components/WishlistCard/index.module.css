@@ -9,6 +9,9 @@
     gap: 8px;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: var(--color-surface);
 }
 
 .header {
@@ -16,6 +19,7 @@
     color: var(--text-color-accent);
     text-decoration: underline;
     text-underline-offset: 2px;
+    margin: 6px 0 12px 0;
 }
 
 .paragraph {

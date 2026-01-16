@@ -79,12 +79,12 @@
     --sidebar-ring: oklch(0.708 0 0);
 
     font-family: var(--font-comic-relief);
-    --font-size-big: 18px;
-    --font-size-regular: 16px;
-    --font-size-small: 14px;
-    --font-size-extra-small: 12px;
+    --font-size-big: 26px;
+    --font-size-regular: 22px;
+    --font-size-small: 18px;
+    --font-size-extra-small: 14px;
 
-    --text-color-primary: #fbf2d3;
+    /* --text-color-primary: #fbf2d3;
     --text-color-secondary: #f9f8f2;
     --text-color-accent: #f1da64;
     --text-color-accent-second: #ffee97;
@@ -95,13 +95,26 @@
     --color-primary: #fbf2d3;
     --color-accent: #f1da64;
     --color-accent-second: #ffee97;
-    --color-surface: #171715;
+    --color-surface: #171715; */
+
+    --text-color-primary: #fbd3f4;
+    --text-color-secondary: #f8bce8;
+    --text-color-accent: #f9a9f1;
+    --text-color-accent-second: #c8f5f6;
+    --text-color-error: #fb2461;
+
+    --text-shadow: var(--text-color-primary) 1px 0 8px;
+
+    --color-primary: #fbd3f6;
+    --color-accent: #f4a3e1;
+    --color-accent-second: #c2eff8;
+    --color-surface: #351632;
 
     color: var(--text-color-primary);
 }
 
 .dark {
-    --background: #0f0f0f;
+    --background: #130710;
     --foreground: oklch(0.985 0 0);
     --card: oklch(0.205 0 0);
     --card-foreground: oklch(0.985 0 0);

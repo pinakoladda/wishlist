@@ -1,0 +1,13 @@
+.name {
+    text-align: center;
+    font-size: 32px;
+    color: var(--text-color-accent);
+    text-decoration: underline 2px solid;
+    text-underline-offset: 2px;
+}
+
+.paragraph {
+    text-align: center;
+    font-size: var(--font-size-regular);
+    margin: 18px 0;
+}

@@ -1,4 +1,4 @@
-import { api } from './index'
+import { api, ApiOptions } from './index'
 
 type WishlistVisibility = 'public' | 'private'
 
@@ -18,8 +18,16 @@ export interface Wishlist {
     id: string
     ownerId: string
     visibility: WishlistVisibility
+    wishIds: []
 }
 
 export const getAllWishlists = (userId: string): Promise<Wishlist[]> => {
     return api('GET', `/users/${userId}/wishlists`)
+}
+
+export const getWishlist = (
+    wishlistId: string,
+    opts?: ApiOptions
+): Promise<Wishlist> => {
+    return api('GET', `/wishlists/${wishlistId}`, opts)
 }

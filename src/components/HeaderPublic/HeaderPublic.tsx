@@ -16,7 +16,12 @@ export const HeaderPublic = () => {
     return (
         <header className={styles.header}>
             {LINKS.map(({ url, text }) => (
-                <Button variant="link" key={url} disabled={pathname === url}>
+                <Button
+                    variant="link"
+                    className={styles.headerLink}
+                    key={url}
+                    disabled={pathname === url}
+                >
                     <Link href={url}>{text}</Link>
                 </Button>
             ))}

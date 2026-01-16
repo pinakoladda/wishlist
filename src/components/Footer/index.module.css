@@ -28,5 +28,5 @@
 
 .btnText {
     color: var(--text-color-accent);
-    font-size: var(--font-size-big);
+    font-size: 22px;
 }
