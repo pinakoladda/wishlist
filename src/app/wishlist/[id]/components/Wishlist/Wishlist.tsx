@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button'
 import { PopupAddWish } from '@/app/wishlist/components/PopupAddWish'
 import { HeaderPrivate } from '@/components/HeaderPrivate'
 import { WishCard } from '../WishCard'
+import { X } from 'lucide-react'
 
 interface WishlistProps {
     wishlist: IWishlit
@@ -19,7 +20,7 @@ export const Wishlist = ({ wishlist }: WishlistProps) => {
     return (
         <>
             <HeaderPrivate />
-            <main className={styles.main}>
+            <main className={styles.wishlist}>
                 <h1 className={styles.name}>{wishlist.name}</h1>
                 <p className={styles.description}>{wishlist.description}</p>
                 {wishlist.wishes.length <= 0 ? (
@@ -38,11 +39,6 @@ export const Wishlist = ({ wishlist }: WishlistProps) => {
                         <p className={styles.paragraph}>
                             Includes wishes: {wishlist.wishes.length}
                         </p>
-                        <section className={styles.wishesSection}>
-                            {allWishes.map((wish) => {
-                                return <WishCard key={wish.id} wish={wish} />
-                            })}
-                        </section>
                         <Button
                             onClick={addWishPopupProps.onOpen}
                             variant="outline"
@@ -50,6 +46,11 @@ export const Wishlist = ({ wishlist }: WishlistProps) => {
                         >
                             Make new wish!
                         </Button>
+                        <section className={styles.wishesSection}>
+                            {allWishes.map((wish) => {
+                                return <WishCard key={wish.id} wish={wish} />
+                            })}
+                        </section>
                     </div>
                 )}
                 <PopupAddWish
@@ -57,6 +58,9 @@ export const Wishlist = ({ wishlist }: WishlistProps) => {
                     visible={addWishPopupProps.visible}
                     onClose={addWishPopupProps.onClose}
                 />
+                <Button variant="ghost" className={styles.deleteBtn}>
+                    <X className={styles.deleteBtnIcon} />
+                </Button>
             </main>
         </>
     )
