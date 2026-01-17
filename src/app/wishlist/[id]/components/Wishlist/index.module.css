@@ -7,11 +7,9 @@
 
 .name {
     text-align: center;
-    font-size: 32px;
+    font-size: 38px;
     color: var(--text-color-accent);
     text-shadow: var(--text-color-primary) 1px 0 8px;
-    text-decoration: underline wavy var(--color-accent) 1.5px;
-    text-underline-offset: 2px;
 }
 
 .description {
@@ -19,6 +17,11 @@
     font-size: var(--font-size-regular);
     margin: 12px 0;
     font-family: var(--font-italic);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
 }
 
 .paragraph {

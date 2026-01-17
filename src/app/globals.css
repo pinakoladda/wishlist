@@ -109,6 +109,7 @@
     --color-accent: #f4a3e1;
     --color-accent-second: #c2eff8;
     --color-surface: #351632;
+    --color-surface-transparent: #36143236;
 
     color: var(--text-color-primary);
 }

@@ -19,7 +19,7 @@ export const Popup = ({ visible, onClose, children }: PopupProps) => {
                     onClick={onClose}
                     variant="ghost"
                 >
-                    <X />
+                    <X className={styles.btnIcon} size={32} />
                 </Button>
                 {children}
             </div>

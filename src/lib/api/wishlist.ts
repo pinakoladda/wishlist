@@ -1,4 +1,5 @@
 import { api, ApiOptions } from './index'
+import { Wish } from './wish'
 
 type WishlistVisibility = 'public' | 'private'
 
@@ -18,7 +19,7 @@ export interface Wishlist {
     id: string
     ownerId: string
     visibility: WishlistVisibility
-    wishIds: []
+    wishes: Wish[]
 }
 
 export const getAllWishlists = (userId: string): Promise<Wishlist[]> => {

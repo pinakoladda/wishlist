@@ -12,12 +12,20 @@ import cn from 'classnames'
 interface PopupAddWishprops {
     visible: boolean
     onClose: () => void
+    wishlistId: string
 }
 
 const CURRENCY = ['USD', 'EUR', 'Zl']
 
-export const PopupAddWish = ({ visible, onClose }: PopupAddWishprops) => {
-    const { fields, errorMessage, onSubmit } = useAddWish({ onClose })
+export const PopupAddWish = ({
+    visible,
+    onClose,
+    wishlistId,
+}: PopupAddWishprops) => {
+    const { fields, errorMessage, onSubmit } = useAddWish({
+        onClose,
+        wishlistId,
+    })
 
     return (
         <Popup visible={visible} onClose={onClose}>

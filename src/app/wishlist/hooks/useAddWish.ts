@@ -6,9 +6,10 @@ type UpdateFn = (value: string) => void
 
 interface useAddWishProps {
     onClose: () => void
+    wishlistId: string
 }
 
-export const useAddWish = ({ onClose }: useAddWishProps) => {
+export const useAddWish = ({ onClose, wishlistId }: useAddWishProps) => {
     const [name, setName] = React.useState('')
     const [description, setDescription] = React.useState('')
     const [price, setPrice] = React.useState('')
@@ -39,6 +40,7 @@ export const useAddWish = ({ onClose }: useAddWishProps) => {
             currency,
             url: link,
             status: 'available',
+            wishlistId: wishlistId,
         })
             .then(() => {
                 onClose()
