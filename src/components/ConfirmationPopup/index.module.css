@@ -1,0 +1,22 @@
+.main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    align-items: center;
+}
+
+.header {
+    font-size: var(--font-size-big);
+}
+
+.sectionVariants {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    font-size: var(--font-size-regular);
+    width: 40%;
+}

@@ -7,6 +7,7 @@ import { PopupAddWish } from '@/app/wishlist/components/PopupAddWish'
 import { HeaderPrivate } from '@/components/HeaderPrivate'
 import { WishCard } from '../WishCard'
 import { X } from 'lucide-react'
+import { ConfirmationPopup } from '@/components/ConfirmationPopup'
 
 interface WishlistProps {
     wishlist: IWishlit
@@ -14,6 +15,7 @@ interface WishlistProps {
 
 export const Wishlist = ({ wishlist }: WishlistProps) => {
     const addWishPopupProps = usePopupProps()
+    const confirmationPopupProps = usePopupProps()
     const allWishes = wishlist.wishes
 
     console.log(wishlist)
@@ -58,9 +60,18 @@ export const Wishlist = ({ wishlist }: WishlistProps) => {
                     visible={addWishPopupProps.visible}
                     onClose={addWishPopupProps.onClose}
                 />
-                <Button variant="ghost" className={styles.deleteBtn}>
+                <Button
+                    onClick={confirmationPopupProps.onOpen}
+                    variant="ghost"
+                    className={styles.deleteBtn}
+                >
                     <X className={styles.deleteBtnIcon} />
                 </Button>
+                <ConfirmationPopup
+                    visible={confirmationPopupProps.visible}
+                    onClose={confirmationPopupProps.onClose}
+                    headerText="Delete this Wishlist?"
+                />
             </main>
         </>
     )
