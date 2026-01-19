@@ -37,7 +37,8 @@
 
 .addWishBtn {
     margin: 0 auto;
-    margin-bottom: 24px;
+    margin-top: 34px;
+    margin-bottom: 34px;
     max-width: fit-content;
     font-size: var(--font-size-regular);
     padding: 12px;

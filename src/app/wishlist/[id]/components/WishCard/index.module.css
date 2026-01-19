@@ -9,6 +9,8 @@
     gap: 8px;
     align-items: center;
     justify-content: space-between;
+    box-shadow: 2px 0 12px var(--color-accent);
+    background-color: var(--color-surface);
 }
 
 .header {
@@ -25,4 +27,7 @@
 .cardAvatar {
     width: 100px;
     height: 100px;
+}
+.reserveBtn {
+    border: 1px solid var(--color-accent);
 }

@@ -36,15 +36,15 @@ export const Wishlist = ({ wishlist }: WishlistProps) => {
                     </div>
                 ) : (
                     <div className={styles.container}>
-                        <p className={styles.paragraph}>
+                        {/* <p className={styles.paragraph}>
                             Includes wishes: {wishlist.wishes.length}
-                        </p>
+                        </p> */}
                         <Button
                             onClick={addWishPopupProps.onOpen}
                             variant="outline"
                             className={styles.addWishBtn}
                         >
-                            Make new wish!
+                            Make new wish
                         </Button>
                         <section className={styles.wishesSection}>
                             {allWishes.map((wish) => {

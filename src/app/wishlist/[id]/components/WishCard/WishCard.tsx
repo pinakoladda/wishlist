@@ -11,7 +11,9 @@ export const WishCard = ({ wish }: WishCardProps) => {
         <main className={styles.card}>
             <h1 className={styles.header}>{wish.name}</h1>
             <p className={styles.description}>{wish.description}</p>
-            <Button>Reserve wish</Button>
+            <Button className={styles.reserveBtn} variant="outline">
+                Reserve wish
+            </Button>
         </main>
     )
 }
