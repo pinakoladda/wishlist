@@ -1,6 +1,6 @@
 'use client'
 import { usePopupProps } from '@/hooks/usePopupProps'
-import { Wishlist as IWishlit } from '@/lib/api/wishlist'
+import { deleteWishlist, Wishlist as IWishlit } from '@/lib/api/wishlist'
 import styles from './index.module.css'
 import { Button } from '@/components/ui/button'
 import { PopupAddWish } from '@/app/wishlist/components/PopupAddWish'
@@ -8,6 +8,8 @@ import { HeaderPrivate } from '@/components/HeaderPrivate'
 import { WishCard } from '../WishCard'
 import { X } from 'lucide-react'
 import { ConfirmationPopup } from '@/components/ConfirmationPopup'
+import { useRouter } from 'next/navigation'
+import { ApiError } from '@/types'
 
 interface WishlistProps {
     wishlist: IWishlit
@@ -17,6 +19,18 @@ export const Wishlist = ({ wishlist }: WishlistProps) => {
     const addWishPopupProps = usePopupProps()
     const confirmationPopupProps = usePopupProps()
     const allWishes = wishlist.wishes
+    const router = useRouter()
+
+    const onDeleteWishlist = () => {
+        deleteWishlist(wishlist.id)
+            .then(() => {
+                router.push('/profile')
+            })
+            .catch((error: ApiError) => {
+                console.log(error.message)
+                router.push('/profile')
+            })
+    }
 
     console.log(wishlist)
     return (
@@ -68,8 +82,8 @@ export const Wishlist = ({ wishlist }: WishlistProps) => {
                     <X className={styles.deleteBtnIcon} />
                 </Button>
                 <ConfirmationPopup
-                    visible={confirmationPopupProps.visible}
-                    onClose={confirmationPopupProps.onClose}
+                    onConfirm={onDeleteWishlist}
+                    {...confirmationPopupProps}
                     headerText="Delete this Wishlist?"
                 />
             </main>

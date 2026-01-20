@@ -5,6 +5,7 @@ import cn from 'classnames'
 
 interface ConfirmationPopupProps {
     visible: boolean
+    onConfirm: () => void
     onClose: () => void
     headerText?: string
 }
@@ -13,6 +14,7 @@ export const ConfirmationPopup = ({
     visible,
     onClose,
     headerText,
+    onConfirm,
 }: ConfirmationPopupProps) => {
     return (
         <Popup visible={visible} onClose={onClose}>
@@ -24,6 +26,7 @@ export const ConfirmationPopup = ({
                     <Button
                         variant="outline"
                         className={cn(styles.btn, styles.confBtn)}
+                        onClick={onConfirm}
                     >
                         yes
                     </Button>

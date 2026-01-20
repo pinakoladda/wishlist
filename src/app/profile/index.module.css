@@ -2,67 +2,44 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 32px;
     border-radius: 12px;
     padding: 20px;
-    margin: 20px;
+    margin: 0 20px;
     box-sizing: border-box;
+    /* border: 1px solid var(--color-accent); */
+    /* background-color: var(--color-surface); */
+}
+
+.container {
+    display: flex;
+    gap: 24px;
 }
 
 .userInfo {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
 }
 
 .userName {
     font-size: var(--font-size-big);
     color: var(--text-color-accent);
     text-shadow: var(--text-shadow);
-    margin: 0 0 6px;
 }
 
 .paragraph {
     font-size: var(--font-size-regular);
 }
 
-.sectionWish {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 0 20px;
+.addWishBtn {
+    border: 1px solid var(--color-accent);
+    height: fit-content;
+    padding: 8px;
+    margin: 0 auto;
+    font-size: var(--font-size-big);
 }
-
-/* .addWishBtn {
-    color: var(--color-accent);
-    font-size: 28px;
-    font-weight: bold;
-    opacity: 1;
-    margin: 20px;
-    text-shadow: var(--text-color-primary) 1px 0 18px;
-    animation-name: glow;
-    animation-play-state: paused;
-}
-
-.addWishBtn:hover {
-    animation-name: glow;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-play-state: running;
-    cursor: pointer;
-}
-
-@keyframes glow {
-    from {
-        text-shadow:
-            0px 0px 5px #f66ee8,
-            0px 0px 5px #e2ddf7;
-    }
-    to {
-        text-shadow:
-            0px 0px 20px #b559a0,
-            0px 0px 20px #e2ddf7;
-    }
-} */
 
 .avatar {
     border: 2px solid var(--color-accent);
@@ -74,6 +51,4 @@
     gap: 16px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 40px;
-    /* justify-content: space-between; */
 }

@@ -9,8 +9,11 @@ interface WishCardProps {
 export const WishCard = ({ wish }: WishCardProps) => {
     return (
         <main className={styles.card}>
-            <h1 className={styles.header}>{wish.name}</h1>
-            <p className={styles.description}>{wish.description}</p>
+            <section className={styles.cardInfo}>
+                <h1 className={styles.header}>{wish.name}</h1>
+                <p className={styles.paragraph}>{wish.prise}</p>
+                <p className={styles.paragraph}>{wish.description}</p>
+            </section>
             <Button className={styles.reserveBtn} variant="outline">
                 Reserve wish
             </Button>

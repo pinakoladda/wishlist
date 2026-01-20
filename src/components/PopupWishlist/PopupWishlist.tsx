@@ -67,7 +67,7 @@ export const PopupWishlist = ({ visible, onClose }: PopupAddWishlistProps) => {
                     </div>
                     <ErrorMessage errorMessage={errorMessage} />
                     <Button className={styles.submitBtn} type="submit">
-                        Create Wishlist
+                        Save
                     </Button>
                 </form>
             </div>

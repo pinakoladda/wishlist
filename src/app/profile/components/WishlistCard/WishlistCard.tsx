@@ -16,9 +16,14 @@ export const WishlistCard = ({ wishlist }: WishCardProps) => {
                 <p className={styles.paragraph}>{wishlist.description}</p>
                 <a href="" className={styles.paragraph}></a>
             </div>
-            <Button className={styles.btn} variant="outline">
-                <Link href={`/wishlist/${wishlist.id}`}>More info...</Link>
-            </Button>
+            <Link
+                className={styles.moreBtnLink}
+                href={`/wishlist/${wishlist.id}`}
+            >
+                <Button className={styles.moreBtn} variant="outline">
+                    More info...
+                </Button>
+            </Link>
         </main>
     )
 }

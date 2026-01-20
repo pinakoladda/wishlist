@@ -17,6 +17,7 @@ export const addWish = (body: AddWishBody) => {
 
 export interface Wish {
     description: string
+    prise: number
     name: string
     id: string
     ownerId: string

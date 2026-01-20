@@ -31,4 +31,5 @@
 
 .submitBtn {
     margin-top: 6px;
+    font-size: var(--font-size-regular);
 }

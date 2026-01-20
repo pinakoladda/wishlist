@@ -32,3 +32,7 @@ export const getWishlist = (
 ): Promise<Wishlist> => {
     return api('GET', `/wishlists/${wishlistId}`, opts)
 }
+
+export const deleteWishlist = (wishlistId: string) => {
+    return api('DELETE', `/wishlists/${wishlistId}`)
+}
