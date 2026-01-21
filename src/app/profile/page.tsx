@@ -7,7 +7,6 @@ import { getAllWishlists, Wishlist } from '@/lib/api/wishlist'
 import React from 'react'
 import { getCurrentUser } from '@/lib/api/auth'
 import { WishlistCard } from './components/WishlistCard'
-import { Button } from '@/components/ui/button'
 
 export default function Profile() {
     const [wishlists, setWishlists] = React.useState<Wishlist[]>([])

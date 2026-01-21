@@ -2,8 +2,8 @@
 import { Plus } from 'lucide-react'
 import { Button } from '../ui/button'
 import styles from './index.module.css'
-import { PopupWishlist } from '../PopupWishlist'
 import { usePopupProps } from '@/hooks/usePopupProps'
+import { PopupWishlist } from '@/app/profile/components/PopupWishlist'
 
 export const Footer = () => {
     const addWishlistPopupProps = usePopupProps()

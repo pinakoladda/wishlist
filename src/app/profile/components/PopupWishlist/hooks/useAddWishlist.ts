@@ -13,7 +13,7 @@ interface useAddWishlistProps {
 export const useAddWishlist = ({ onClose }: useAddWishlistProps) => {
     const [name, setName] = React.useState('')
     const [description, setDescription] = React.useState('')
-    const [visibility, setVisibility] = React.useState(false)
+    const [isPrivate, setIsPrivate] = React.useState(false)
     const [errorMessage, setErrorMessage] = React.useState('')
 
     const onChange =
@@ -28,7 +28,7 @@ export const useAddWishlist = ({ onClose }: useAddWishlistProps) => {
         addWishlist({
             name: name,
             description: description,
-            visibility: visibility ? 'public' : 'private',
+            visibility: isPrivate ? 'private' : 'public',
         })
             .then(() => {
                 onClose()
@@ -43,7 +43,7 @@ export const useAddWishlist = ({ onClose }: useAddWishlistProps) => {
     }
 
     const onChangeVisibility = (value: CheckedState) => {
-        setVisibility(value as boolean)
+        setIsPrivate(value as boolean)
     }
 
     return {
@@ -53,7 +53,7 @@ export const useAddWishlist = ({ onClose }: useAddWishlistProps) => {
                 value: description,
                 onChange: onChange(setDescription),
             },
-            visibility: { checked: visibility, onChange: onChangeVisibility },
+            isPrivate: { checked: isPrivate, onChange: onChangeVisibility },
         },
         onSubmit,
         errorMessage,

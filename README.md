@@ -53,3 +53,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 1. margin (80px, 42, 18)
 2.
+
+Правки для бэкенда
+
+1. Описание при добавлении вишлиста не обязательно

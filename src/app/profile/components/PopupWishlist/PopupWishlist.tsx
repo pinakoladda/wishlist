@@ -5,9 +5,9 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
-import { CheckBox } from '../CheckBox'
+import { CheckBox } from '../../../../components/CheckBox'
 import { useAddWishlist } from './hooks/useAddWishlist'
-import { ErrorMessage } from '../ErrorMessage'
+import { ErrorMessage } from '../../../../components/ErrorMessage'
 
 interface PopupAddWishlistProps {
     visible: boolean
@@ -62,7 +62,7 @@ export const PopupWishlist = ({ visible, onClose }: PopupAddWishlistProps) => {
                         <CheckBox
                             id="private"
                             labelText="Private"
-                            {...fields.visibility}
+                            {...fields.isPrivate}
                         />
                     </div>
                     <ErrorMessage errorMessage={errorMessage} />

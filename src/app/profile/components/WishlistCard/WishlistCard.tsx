@@ -3,6 +3,7 @@ import styles from './index.module.css'
 
 import { Wishlist } from '@/lib/api/wishlist'
 import Link from 'next/link'
+import { Lock } from 'lucide-react'
 
 interface WishCardProps {
     wishlist: Wishlist
@@ -11,6 +12,13 @@ interface WishCardProps {
 export const WishlistCard = ({ wishlist }: WishCardProps) => {
     return (
         <main className={styles.card}>
+            {wishlist.visibility === 'private' && (
+                <Lock
+                    strokeWidth={1.75}
+                    size={16}
+                    className={styles.privateIcon}
+                />
+            )}
             <div className={styles.container}>
                 <h2 className={styles.header}>{wishlist.name}</h2>
                 <a href="" className={styles.paragraph}></a>
