@@ -21,7 +21,7 @@ export default function Profile() {
         <>
             <HeaderPrivate />
             <main className={styles.main}>
-                <div className={styles.container}>
+                <div className={styles.userInfoContainer}>
                     <section className={styles.avatarContainer}>
                         <Avatar className={styles.avatar}>
                             <AvatarImage src="/avatar.jpg" />

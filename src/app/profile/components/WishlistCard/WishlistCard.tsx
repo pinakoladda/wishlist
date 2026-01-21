@@ -13,7 +13,6 @@ export const WishlistCard = ({ wishlist }: WishCardProps) => {
         <main className={styles.card}>
             <div className={styles.container}>
                 <h2 className={styles.header}>{wishlist.name}</h2>
-                <p className={styles.paragraph}>{wishlist.description}</p>
                 <a href="" className={styles.paragraph}></a>
             </div>
             <Link
