@@ -1,0 +1,26 @@
+.userInfoContainer {
+    display: flex;
+    gap: 24px;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+}
+
+.userName {
+    font-size: var(--font-size-big);
+    color: var(--text-color-accent);
+    text-shadow: var(--text-shadow);
+}
+
+.paragraph {
+    font-size: var(--font-size-regular);
+}
+
+.avatar {
+    border: 2px solid var(--color-accent);
+    box-shadow: var(--text-shadow);
+}

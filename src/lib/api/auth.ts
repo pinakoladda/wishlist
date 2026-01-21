@@ -50,3 +50,14 @@ export const getCurrentUser = (token?: string): Promise<User> => {
             : undefined
     )
 }
+
+interface updateUserInfoBody {
+    name?: string
+    username?: string
+    avatarUrl?: string
+    password?: string
+}
+
+export const updateUserInfo = (body: updateUserInfoBody) => {
+    return api('PATCH', '/users/me', { body })
+}

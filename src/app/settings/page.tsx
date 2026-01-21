@@ -1,15 +1,16 @@
-import { Input } from '@/components/ui/input'
+'use client'
 import styles from './index.module.css'
-import { Label } from '@radix-ui/react-label'
+import { HeaderPrivate } from '@/components/HeaderPrivate'
+import { ProfileInfo } from '@/components/ProfileInfo'
+import { PasswordChangeForm } from './components/PasswordChangeForm'
 
 export default function Settings() {
     return (
         <main className={styles.settings}>
-            <h2 className={styles.header}>Settings</h2>
-            <section>
-                <Label />
-                <Input />
-            </section>
+            <HeaderPrivate />
+            <h1 className={styles.header}>Settings</h1>
+            <ProfileInfo />
+            <PasswordChangeForm />
         </main>
     )
 }

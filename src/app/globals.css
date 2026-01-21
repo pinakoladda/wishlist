@@ -79,6 +79,7 @@
     --sidebar-ring: oklch(0.708 0 0);
 
     font-family: var(--font-comic-relief);
+    --font-size-extra: 32px;
     --font-size-big: 26px;
     --font-size-regular: 22px;
     --font-size-small: 18px;
