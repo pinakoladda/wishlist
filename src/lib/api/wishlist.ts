@@ -22,8 +22,11 @@ export interface Wishlist {
     wishes: Wish[]
 }
 
-export const getAllWishlists = (userId: string): Promise<Wishlist[]> => {
-    return api('GET', `/users/${userId}/wishlists`)
+export const getAllWishlists = (
+    userId: string,
+    opts?: ApiOptions
+): Promise<Wishlist[]> => {
+    return api('GET', `/users/${userId}/wishlists`, opts)
 }
 
 export const getWishlist = (

@@ -1,26 +1,24 @@
-'use client'
-import React from 'react'
 import { HeaderPrivate } from '@/components/HeaderPrivate'
 import { Footer } from '@/components/Footer'
-import { getAllWishlists, Wishlist } from '@/lib/api/wishlist'
+import { getAllWishlists } from '@/lib/api/wishlist'
 import { getCurrentUser } from '@/lib/api/auth'
 import { WishlistCard } from './components/WishlistCard'
 import { ProfileInfo } from '@/components/ProfileInfo'
 import styles from './index.module.css'
+import { getAuthToken, getServerApiOptions } from '@/lib/api/server_api'
 
-export default function Profile() {
-    const [wishlists, setWishlists] = React.useState<Wishlist[]>([])
+export default async function Profile() {
+    const token = await getAuthToken()
+    const apiOpts = await getServerApiOptions()
 
-    React.useEffect(() => {
-        getCurrentUser()
-            .then((user) => getAllWishlists(user.id))
-            .then((data) => setWishlists(data))
-    }, [])
+    const user = await getCurrentUser(token)
+    const wishlists = await getAllWishlists(user.id, apiOpts)
+
     return (
         <>
             <HeaderPrivate />
             <main className={styles.main}>
-                <ProfileInfo />
+                <ProfileInfo user={user} />
                 <section className={styles.sectionAddingWish}>
                     {wishlists.length <= 0 ? (
                         <p className={styles.paragraph}>

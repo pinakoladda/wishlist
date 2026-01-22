@@ -24,3 +24,8 @@
     border: 2px solid var(--color-accent);
     box-shadow: var(--text-shadow);
 }
+
+.btnIcon {
+    width: 24px;
+    height: 24px;
+}

@@ -1,4 +1,4 @@
-.changePasswordSection {
+.editUserSection {
     max-width: 350px;
     width: 100%;
     display: flex;
@@ -9,7 +9,7 @@
     padding: 26px;
 }
 
-.passwordContainer {
+.container {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -22,6 +22,12 @@
     border-bottom: 0.8px solid var(--color-primary);
 }
 
+.paragraph {
+    font-size: var(--font-size-small);
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
 .label {
     font-size: var(--font-size-small);
     color: var(--color-primary);
@@ -32,6 +38,6 @@
     color: var(--color-primary);
 }
 
-.sumbitBtn {
+.btn {
     font-size: var(--font-size-small);
 }
