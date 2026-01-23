@@ -1,5 +1,5 @@
 .editUserSection {
-    max-width: 350px;
+    max-width: 768px;
     width: 100%;
     display: flex;
     gap: 24px;
@@ -9,7 +9,18 @@
     padding: 26px;
 }
 
-.container {
+.editSectionForm {
+    max-width: 768px;
+    width: 100%;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+    border: 1px solid var(--color-primary);
+    border-radius: 12px;
+    padding: 26px;
+}
+
+.editUserInfo {
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -25,7 +36,8 @@
 .paragraph {
     font-size: var(--font-size-small);
     color: var(--color-primary);
-    text-decoration: underline;
+    text-decoration: underline 0.8px;
+    text-underline-offset: 2px;
 }
 
 .label {
@@ -40,4 +52,52 @@
 
 .btn {
     font-size: var(--font-size-small);
+    width: 100%;
+    margin-top: 16px;
 }
+
+.avatar {
+    margin: 0 auto;
+    border: 2px solid var(--color-accent);
+    box-shadow: var(--text-shadow);
+    height: 120px;
+    width: 120px;
+}
+
+.staticUserInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+}
+
+.avatarLabelContainer {
+    width: 120px;
+    height: 120px;
+}
+
+.editAvatarInput {
+    display: none;
+}
+
+.editAvatarImage {
+    object-fit: cover;
+    display: block;
+    width: 120px;
+    height: 120px;
+    z-index: 3;
+    position: relative;
+}
+
+.editImg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* .avatarLabelContainer:hover .editImg {
+    opacity: 1;
+} */

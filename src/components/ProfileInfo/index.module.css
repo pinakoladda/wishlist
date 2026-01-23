@@ -23,6 +23,8 @@
 .avatar {
     border: 2px solid var(--color-accent);
     box-shadow: var(--text-shadow);
+    height: 120px;
+    width: 120px;
 }
 
 .btnIcon {

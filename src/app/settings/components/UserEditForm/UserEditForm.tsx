@@ -6,6 +6,7 @@ import styles from './index.module.css'
 import { User } from '@/types'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { useEditUser } from '../../hooks/useEditUser'
+import { Pencil } from 'lucide-react'
 
 interface UserEditFormProps {
     user: User
@@ -15,17 +16,36 @@ export const UserEditForm = ({ user }: UserEditFormProps) => {
     const { fields, onEdit, isEdit, onSubmit } = useEditUser({ user })
     return (
         <>
-            <section className={styles.editUserSection}>
-                <h2 className={styles.subheader}>Edit personal info</h2>
+            <>
                 {isEdit ? (
-                    <form onSubmit={onSubmit}>
-                        <div className={styles.container}>
-                            <Avatar className={styles.avatar}>
-                                <AvatarImage src="/avatar.jpg" />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
+                    <form
+                        onSubmit={onSubmit}
+                        className={styles.editSectionForm}
+                    >
+                        <h2 className={styles.subheader}>Edit personal info</h2>
+                        <div className={styles.editUserInfo}>
+                            <label
+                                htmlFor="avatarInput"
+                                className={styles.avatarLabelContainer}
+                            >
+                                <input
+                                    id="avatarInput"
+                                    type="file"
+                                    {...fields.avatar}
+                                    className={styles.editAvatarInput}
+                                />
+                                <Avatar className={styles.avatar}>
+                                    <AvatarImage src="/avatar.jpg" />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                    <Pencil
+                                        size={60}
+                                        strokeWidth={1.25}
+                                        className={styles.editImg}
+                                    />
+                                </Avatar>
+                            </label>
                         </div>
-                        <div className={styles.container}>
+                        <div className={styles.editUserInfo}>
                             <Label className={styles.label} htmlFor="name">
                                 Name:
                             </Label>
@@ -36,7 +56,7 @@ export const UserEditForm = ({ user }: UserEditFormProps) => {
                                 {...fields.name}
                             />
                         </div>
-                        <div className={styles.container}>
+                        <div className={styles.editUserInfo}>
                             <Label className={styles.label} htmlFor="userName">
                                 User name:
                             </Label>
@@ -46,7 +66,7 @@ export const UserEditForm = ({ user }: UserEditFormProps) => {
                                 {...fields.userName}
                             />
                         </div>
-                        <div className={styles.container}>
+                        <div className={styles.editUserInfo}>
                             <Label className={styles.label} id="dateOfBrth">
                                 Birthday:
                             </Label>
@@ -64,17 +84,17 @@ export const UserEditForm = ({ user }: UserEditFormProps) => {
                         </Button>
                     </form>
                 ) : (
-                    <>
+                    <section className={styles.editUserSection}>
+                        <h2 className={styles.subheader}>Edit personal info</h2>
                         <Avatar className={styles.avatar}>
                             <AvatarImage src="/avatar.jpg" />
                             <AvatarFallback>CN</AvatarFallback>
                         </Avatar>
-                        <div>
+                        <div className={styles.staticUserInfo}>
                             <p className={styles.paragraph}>{user.name}</p>
                             <p className={styles.paragraph}>{user.username}</p>
                             <p className={styles.paragraph}>07/08/1999 🥳</p>
                         </div>
-
                         <Button
                             onClick={onEdit}
                             className={styles.btn}
@@ -82,9 +102,9 @@ export const UserEditForm = ({ user }: UserEditFormProps) => {
                         >
                             Edit info
                         </Button>
-                    </>
+                    </section>
                 )}
-            </section>
+            </>
         </>
     )
 }

@@ -16,9 +16,7 @@ export default async function Settings() {
             <HeaderPrivate />
             <h1 className={styles.header}>Settings</h1>
             <div className={styles.container}>
-                <div>
-                    <UserEditForm user={user} />
-                </div>
+                <UserEditForm user={user} />
                 <PasswordChangeForm />
             </div>
         </main>

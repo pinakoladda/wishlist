@@ -12,6 +12,7 @@ export const useEditUser = ({ user }: useEditUserProps) => {
     const [name, setName] = React.useState(user.name)
     const [userName, setUserName] = React.useState(user.username)
     const [date, setDate] = React.useState('')
+    const [avatar, setAvatar] = React.useState('')
     const [isEdit, setIsEdit] = React.useState(false)
 
     const onChange =
@@ -40,6 +41,7 @@ export const useEditUser = ({ user }: useEditUserProps) => {
             name: { value: name, onChange: onChange(setName) },
             userName: { value: userName, onChange: onChange(setUserName) },
             date: { value: date, onChange: onChange(setDate) },
+            avatar: { value: avatar, onChange: onChange(setAvatar) },
         },
         onSubmit,
         onEdit,

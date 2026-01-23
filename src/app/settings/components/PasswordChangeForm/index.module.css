@@ -1,5 +1,5 @@
 .changePasswordSection {
-    max-width: 350px;
+    max-width: 768px;
     width: 100%;
     display: flex;
     gap: 24px;
@@ -34,4 +34,5 @@
 
 .sumbitBtn {
     font-size: var(--font-size-small);
+    margin-top: 16px;
 }

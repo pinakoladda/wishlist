@@ -62,4 +62,5 @@
     top: 0;
     right: 0;
     margin: 6px;
+    color: var(--color-accent);
 }
